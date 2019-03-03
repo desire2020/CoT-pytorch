@@ -26,7 +26,7 @@ class Generator(nn.Module):
             nn.init.normal(p, 0, 0.1)
         self.g_opt = opt.Adam(params=self.parameters(),
                               lr=learning_rate, betas=(0.9, 0.95),
-                              amsgrad=True)
+                              amsgrad=False)
         if self.is_cuda:
             self.cuda()
 
